@@ -33,7 +33,11 @@ app.get("/compose", function(req,res){
 })
 
 app.post("/compose", function(req,res){
-  console.log(req.body.titleText)
+  // console.log(req.body.titleText)
+  let post = {
+    title:req.body.titleText,
+    body:req.body.contentText
+  }
 })
 
 
