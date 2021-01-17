@@ -2,8 +2,17 @@
 
 <h1>Compose</h1>
 <form class="content" action="/compose" method="post">
-  <input type="text" name="textContent">
-  <button type="submit" name="button">Publish</button>
+  <div class="">
+    <label for="textContent">Title</label>
+    <input class="form-control" type="text" name="titleText">
+  </div>
+  <div class="">
+    <label for="contentText">Post</label>
+    <textarea class="form-control" name="contentText" rows="8"></textarea>
+  </div>
+  <div class="submitBtn">
+    <button class="btn btn-primary" type="submit" name="button">Publish</button>
+  </div>
 </form>
 
 
