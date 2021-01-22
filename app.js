@@ -35,7 +35,11 @@ app.get("/compose", function(req,res){
 })
 
 app.get("/posts/:title", function(req,res){
-  console.log(req.params.title)
+  posts.forEach(function(element){
+    if (element.title === req.params.title) {
+      console.log("Match found!")
+    }
+  })
 })
 
 app.post("/compose", function(req,res){
