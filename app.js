@@ -36,10 +36,9 @@ app.get("/compose", function(req,res){
 })
 
 app.get("/posts/:title", function(req,res){
-  const reqTitle = req.params.title
+  const reqTitle = lodash.lowerCase(req.params.title)
   posts.forEach(function(element){
     let elementTitle = lodash.lowerCase(element.title)
-    elementTitle = lodash.kebabCase(element.title)
     if (elementTitle === reqTitle) {
       console.log("Match found!")
     } else {
