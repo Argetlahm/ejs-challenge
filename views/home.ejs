@@ -1,10 +1,10 @@
 <%- include("partials/header") -%>
     <h1>Home</h1>
     <p><%= home %></p>
-    <% let arrPost = postContent %>
-    <% for (let i = 0; i < arrPost.length; i++){ %>
-    <%- console.log(arrPost[i].title) -%>
-    <% } %>
+
+    <% postContent.forEach(function(element){ %>
+    <%  console.log(element.title) %>
+    <% }) %>
 
 
 <%- include("partials/footer") -%>
