@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const lodash = require('lodash');
 const port = 3000
 let posts = []
 
@@ -35,9 +36,14 @@ app.get("/compose", function(req,res){
 })
 
 app.get("/posts/:title", function(req,res){
+  const reqTitle = req.params.title
   posts.forEach(function(element){
-    if (element.title === req.params.title) {
+    let elementTitle = lodash.lowerCase(element.title)
+    elementTitle = lodash.kebabCase(element.title)
+    if (elementTitle === reqTitle) {
       console.log("Match found!")
+    } else {
+      console.log("Missing!")
     }
   })
 })
