@@ -40,7 +40,10 @@ app.get("/posts/:title", function(req,res){
   posts.forEach(function(element){
     let elementTitle = lodash.lowerCase(element.title)
     if (elementTitle === reqTitle) {
-      console.log("Match found!")
+      res.render("post",{
+        title:element.title,
+        content:element.body
+      })
     } else {
       console.log("Missing!")
     }
