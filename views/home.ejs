@@ -4,7 +4,7 @@
 
     <% postContent.forEach(function(element){ %>
     <h1><%= element.title %></h1>
-    <p><%= element.body.slice(0,100) + " ..." %></p>
+    <p><%= element.body.slice(0,100) + " ..." %><a href="/posts/<%= element.title %>">Read More</a></p>
     <% }) %>
 
 
